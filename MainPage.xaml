@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstadosCidades.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label Text="Selecione uma cidade" FontSize="Medium" />
+            <Picker x:Name="PickerCidade" SelectedIndexChanged="OnCidadeSelecionada" />
+
+            <Label Text="Previsão para hoje" FontSize="Medium" />
+            <Label x:Name="LabelPrevisaoAtual" Text="Selecione uma cidade para ver a previsão" />
+
+            <Label Text="Previsão para os próximos dias" FontSize="Medium" />
+            <ListView x:Name="ListaPrevisao">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Data}" Detail="{Binding CondicaoDesc}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
